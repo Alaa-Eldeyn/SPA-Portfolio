@@ -80,7 +80,7 @@ const Home = () => {
                   whileInView={"visible"}
                   transition={{ delay: 0.38 }}
                   exit={{ x: "-100%", opacity: 0 }}
-                  href="https://drive.google.com/uc?export=download&id=19cIP0o22E5FASfYWiXW8wBvHhNc13sJM"
+                  href="https://drive.google.com/uc?export=download&id=10dmWGRrMXdr2c9m26Tk-eyVymttBaa-e"
                 >
                   <button className="button rounded" type="button">
                     <span className="button__text">Download CV</span>
