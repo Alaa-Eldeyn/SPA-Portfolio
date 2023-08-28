@@ -16,7 +16,7 @@ import { GoCommandPalette } from "react-icons/go";
 // import { TbMobiledata } from "react-icons/tb";
 
 export const navPages = [
-  { id: 1, name: "Home", link: "#home" },
+  { id: 1, name: "Home", link: "#" },
   { id: 2, name: "Skills", link: "#skills" },
   // { id: 4, name: "Certificates", link: "/certificates" },
   { id: 5, name: "About me", link: "#about_me" },
