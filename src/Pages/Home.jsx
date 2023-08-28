@@ -24,10 +24,10 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className=" overflow-x-hidden">
       <HomeSocial />
       <section
-        className="page-container overflow-x-hidden container d-grid place-items-center"
+        className="page-container container d-grid place-items-center"
         id="home"
       >
         <div className="row justify-content-center align-items-center">
