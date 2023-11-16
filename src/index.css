@@ -864,6 +864,7 @@ nav ul .nav-item a.active {
 }
 .about-img {
   animation: float 6s ease-in-out infinite;
+  max-width: 40%;
   max-height: 400px;
   object-fit: contain;
   width: fit-content;

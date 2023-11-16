@@ -1,8 +1,12 @@
 import { social } from "../data";
 import Title from "../Component/Title";
 import { motion } from "framer-motion";
+import { ValidationError, useForm } from "@formspree/react";
+import Lottie from "lottie-react";
+import sent from "../../public/Animation - 1700172183132.json"
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xwkdjqjv");
   const welcomeTitle = {
     hidden: {
       x: "-100%",
@@ -81,14 +85,14 @@ const Contact = () => {
               <div className="sm-title">
                 <h3>Get In Touch</h3>
               </div>
-              <form id="contact-form" method="POST">
+              <form id="contact-form" onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
                       <input
-                        name="Name"
+                        name="name"
                         id="name"
-                        placeholder="Name *"
+                        placeholder="Name"
                         className="form-control"
                         type="text"
                       />
@@ -97,42 +101,57 @@ const Contact = () => {
                   <div className="col-md-6">
                     <div className="form-group">
                       <input
-                        name="Email"
+                        name="email"
                         id="email"
                         placeholder="Email *"
                         className="form-control"
                         type="email"
                       />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                      />
                     </div>
                   </div>
-                  <div className="col-12">
+                  {/* <div className="col-12">
                     <div className="form-group">
                       <input
                         name="Subject"
                         id="subject"
-                        placeholder="Subject *"
+                        placeholder="Subject"
                         className="form-control"
                         type="text"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <div className="col-md-12">
                     <div className="form-group">
                       <textarea
                         name="message"
                         id="message"
                         placeholder="Your message *"
-                        rows="3"
+                        rows="5"
                         className="form-control"
-                      ></textarea>
+                      />
+                      <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={state.errors}
+                      />
                     </div>
                   </div>
-                  <div className="col-md-12">
+                  <div className="col-md-12 d-flex">
                     <div className="send">
-                      <button className="btn " type="button" value="Send">
-                        <span>Contact Us</span>
+                      <button
+                        className="btn"
+                        type="submit"
+                        disabled={state.submitting}
+                      >
+                        <span>{state.submitting ? "Submitting..." : "Submit"}</span>
                       </button>
                     </div>
+                    {state.succeeded && <p className="d-flex gap-2 justify-content-center align-items-center m-0 ps-3"><Lottie style={{height:40}} loop={false} animationData={sent} /> Your message sent successfully</p>}
                   </div>
                 </div>
               </form>

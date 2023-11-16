@@ -4,6 +4,8 @@ import HomeSocial from "../Component/HomeSocial";
 import MobileHomeSocial from "../Component/MobileHomeSocial";
 import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import animationData from "../../public/Animation - 1700167698291.json"
 
 const Home = () => {
   const homeTitle = useTypewriter({
@@ -118,12 +120,20 @@ const Home = () => {
               initial={{ x: "130%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: "130%", opacity: 0 }}
+              className="mt-5"
+            >
+              <Lottie animationData={animationData} />
+            </motion.div>
+            {/* <motion.div
+              initial={{ x: "130%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "130%", opacity: 0 }}
               className="home-avatar-box"
             >
               <div className="home-avatar-in">
                 <img src={mainImg} className="img rounded" alt="Alaa Eldeyn" />
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>

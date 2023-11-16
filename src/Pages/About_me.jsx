@@ -1,5 +1,7 @@
+import Lottie from "lottie-react";
 import Title from "../Component/Title";
 import about from "../assets/About me2.png";
+import animationData from "../../public/Animation - 1700169099201.json"
 import { motion } from "framer-motion";
 
 const About_me = () => {
@@ -7,17 +9,19 @@ const About_me = () => {
     <div className="section-trans overflow-x-hidden" id="about_me">
       <section className="container">
         <Title title="About me" />
-        <div className="d-flex justify-content-center align-items-center flex-column flex-lg-row text-center">
+        <div className="d-flex justify-content-center align-items-center gap-2 flex-column flex-lg-row text-center">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             exit={{ x: -100, opacity: 0 }}
+            className="img order-1 order-lg-0 rounded d-none d-lg-block about-img"
           >
-            <img
+            <Lottie animationData={animationData} />
+            {/* <img
               src={about}
               className="img order-1 order-lg-0 rounded about-img"
               alt="about me"
-            />
+            /> */}
           </motion.div>
           <motion.div
             initial={{ x: 100, opacity: 0 }}
