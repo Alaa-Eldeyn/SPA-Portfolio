@@ -49,7 +49,7 @@ const About_me = () => {
               {[
                 {
                   text: "Download CV",
-                  link: "CV",
+                  link: "https://drive.google.com/uc?export=download&id=1MLseF5sVn-UIGUSWPlcfBm-EZ7sa9lV6",
                 },
                 {
                   text: "Get in touch",
